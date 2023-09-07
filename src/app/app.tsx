@@ -1,7 +1,8 @@
 import { MantineProvider, rem } from "@mantine/core";
 import { CustomFonts } from "./styles/fonts";
+import { TodoPage } from "@/pages/todo";
+
 export const App = () => {
-  return <></>;
   return (
     <MantineProvider
       theme={{
@@ -32,6 +33,7 @@ export const App = () => {
       }}
     >
       <CustomFonts />
+      <TodoPage />
     </MantineProvider>
   );
 };

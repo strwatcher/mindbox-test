@@ -27,7 +27,7 @@ export const TodoPage = () => {
             markUndone={todos.markUndone}
             empty={<EmptyList />}
           />
-          <Group sx={{ justifyContent: "space-between" }}>
+          <Group sx={{ justifyContent: "space-around" }}>
             <UndoneTodosCount count={todos.undone.length} />
             <TodosListSelect
               selectedList={selectTodos.currentList}

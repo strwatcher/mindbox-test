@@ -6,11 +6,27 @@ export const PageLayout = (props: { children: ReactNode }) => {
     <Box
       w={"100vw"}
       h={"100vh"}
-      p={rem(40)}
       display={"flex"}
-      sx={{ justifyContent: "center", boxSizing: "border-box" }}
+      sx={(theme) => ({
+        justifyContent: "center",
+        boxSizing: "border-box",
+        padding: rem(40),
+
+        [theme.fn.smallerThan("md")]: {
+          padding: rem(10),
+        },
+      })}
     >
-      <Box w={"60%"}>{props.children}</Box>
+      <Box
+        sx={(theme) => ({
+          width: "60%",
+          [theme.fn.smallerThan("md")]: {
+            width: "100%",
+          },
+        })}
+      >
+        {props.children}
+      </Box>
     </Box>
   );
 };

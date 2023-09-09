@@ -11,13 +11,12 @@ export const TodoInput = (props: TodoInputProps) => {
   const { submit, todoText, setTodoText } = useTodoInput(props.onAdd);
   return (
     <form onSubmit={submit}>
-      <Group>
+      <Group sx={{ flexWrap: "nowrap" }}>
         <ActionIcon
           type="submit"
           variant="gradient"
           gradient={indigoCyanGradient}
           radius={"xl"}
-          size={"lg"}
           sx={{ cursor: "pointer" }}
         >
           <IconPlus />
@@ -29,7 +28,6 @@ export const TodoInput = (props: TodoInputProps) => {
             setTodoText(e.currentTarget.value);
           }}
           sx={{ flexGrow: 1 }}
-          size="md"
           placeholder="What needs to be done?"
         />
       </Group>
